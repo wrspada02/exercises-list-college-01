@@ -47,3 +47,20 @@ def exercise02():
 
   for monthIndex, temperature in monthTemperatureHigherThanAverage.items():
     print(f'{mappedMonthByIndex[str(monthIndex+1)]} - {temperature}°C')
+
+""" 3º) Faça um Programa que peça as quatro notas de 10 alunos, calcule e armazene numa lista a média
+de cada aluno, imprima o número de alunos com média maior ou igual a 7.0.
+alunos com media maior que 7.0 ---> ", somaAlunos) """
+
+def exercise03():
+  studentsAverage = []
+
+  for i in range(10):
+    studentNote = 0
+
+    for j in range(4):
+      studentNote += float(input(f'Digite a nota {j+1} do aluno {i+1}: '))
+    
+    studentsAverage.append(studentNote / 4)
+  
+  print(f'Alunos com média maior ou igual a 7.0: {len(list(filter(lambda x: x >= 7, studentsAverage)))}')
