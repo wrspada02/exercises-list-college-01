@@ -88,3 +88,35 @@ def exercise04():
   print(f'Valores inversos: {numbers[::-1]}')
   print(f'Soma dos valores: {sum(numbers)}')
   print(f'Média dos valores: {sum(numbers) / len(numbers)}')
+
+""" 5º) Em uma competição de salto em distância cada atleta tem direito a cinco saltos. O resultado do
+atleta será determinado pela média dos cinco valores restantes. Você deve fazer um programa que
+receba o nome e as cinco distâncias alcançadas pelo atleta em seus saltos e depois informe o nome,
+os saltos e a média dos saltos. O programa deve ser encerrado quando não for informado o nome do
+atleta. A saída do programa deve ser conforme o exemplo abaixo:
+Atleta: Rodrigo Curvêllo
+Primeiro Salto: 6.5 m
+Segundo Salto: 6.1 m
+Terceiro Salto: 6.2 m
+Quarto Salto: 5.4 m
+Quinto Salto: 5.3 m """
+
+def exercise05():
+  athletes = {}
+  currentAthlete = 'Patati Patatá'
+
+  while currentAthlete != '':
+    currentAthlete = input('Digite o nome do atleta: ')
+    if currentAthlete != '':
+      jumps = []
+
+      for i in range(5):
+        jumps.append(float(input(f'Digite a distância do salto {i+1} em metros: ')))
+
+      athletes[currentAthlete] = jumps
+
+  for athlete, jumps in athletes.items():
+    print(f'Atleta: {athlete}')
+    for i, jump in enumerate(jumps):
+      print(f'Salto {i+1}: {jump}m')
+    print(f'Média dos saltos: {sum(jumps) / len(jumps)}m')
