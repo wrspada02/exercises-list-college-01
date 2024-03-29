@@ -64,3 +64,27 @@ def exercise03():
     studentsAverage.append(studentNote / 4)
   
   print(f'Alunos com média maior ou igual a 7.0: {len(list(filter(lambda x: x >= 7, studentsAverage)))}')
+
+""" 4º) Faça um programa que leia um número indeterminado de valores, correspondentes a notas,
+encerrando a entrada de dados quando for informado um valor igual a -1 (que não deve ser
+armazenado). Após esta entrada de dados, faça:
+1. Mostre a quantidade de valores que foram lidos;
+2. Exiba todos os valores na ordem em que foram informados, um ao lado do outro;
+3. Exiba todos os valores na ordem inversa à que foram informados, um abaixo do outro;
+4. Calcule e mostre a soma dos valores;
+5. Calcule e mostre a média dos valores;  """
+
+def exercise04():
+  numbers = []
+  currentNumber = 0
+
+  while currentNumber != -1:
+    currentNumber = int(input('Digite um número: '))
+    if currentNumber != -1:
+      numbers.append(currentNumber)
+  
+  print(f'Quantidade de valores lidos: {len(numbers)}')
+  print(f'Valores informados: {numbers}')
+  print(f'Valores inversos: {numbers[::-1]}')
+  print(f'Soma dos valores: {sum(numbers)}')
+  print(f'Média dos valores: {sum(numbers) / len(numbers)}')
