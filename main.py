@@ -120,3 +120,22 @@ def exercise05():
     for i, jump in enumerate(jumps):
       print(f'Salto {i+1}: {jump}m')
     print(f'Média dos saltos: {sum(jumps) / len(jumps)}m')
+
+""" 6º) Foram anotadas as idades e alturas de 7 alunos. Faça um Programa que determine quantos alunos
+com mais de 13 anos possuem altura inferior à média de altura desses alunos.
+idades = [14, 12, 13, 16, 18, 20, 13]
+alturas = [1.8, 1.9, 1.0, 2.0, 1.4, 1.3, 1.85] """
+
+def exercise06():
+  ages = [14, 12, 13, 16, 18, 20, 13]
+  heights = [1.8, 1.9, 1.0, 2.0, 1.4, 1.3, 1.85]
+  averageHeight = sum(heights) / len(heights)
+  studentsWithMoreThan13YearsOldAndHeightLessThanAverage = 0
+
+  for i in range(len(ages)):
+    if ages[i] > 13 and heights[i] < averageHeight:
+      studentsWithMoreThan13YearsOldAndHeightLessThanAverage += 1
+
+  print(f'Alunos com mais de 13 anos e altura inferior à média: {studentsWithMoreThan13YearsOldAndHeightLessThanAverage}')
+
+exercise06()
