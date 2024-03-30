@@ -215,3 +215,64 @@ def exercise07():
     print(f'Total {sum(candidates)} 100%')
 
     print(f'O candidatos mais votado foi {candidates.index(max(candidates)) + 1} com {max(candidates)} votos, correspondendo a {calcPercentage(max(candidates),sum(candidates))}% dos votos.')
+
+""" 8º) Utilize uma lista para resolver o problema a seguir. Uma empresa paga seus vendedores com base
+em comissões. O vendedor recebe $200 por semana mais 9 por cento de suas vendas brutas daquela
+semana. Por exemplo, um vendedor que teve vendas brutas de $3000 em uma semana recebe $200
+mais 9 por cento de $3000, ou seja, um total de $470. Escreva um programa (usando uma lista de
+contadores) que determine quantos vendedores receberam salários nos seguintes intervalos de
+valores:
+a. $200 - $299
+b. $300 - $399
+c. $400 - $499
+d. $500 - $599
+e. $600 - $699
+f. $700 - $799
+g. $800 - $899
+h. $900 - $999
+i. $1000 em diante """
+
+def exercise08():
+  def calcSalary(sales):
+    return 200 + (sales * 0.09)
+
+  sales = [3000, 5000, 7000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
+  salaries = []
+
+  for sale in sales:
+    salaries.append(calcSalary(sale))
+  
+  salaryRanges = {
+    'a': 0,
+    'b': 0,
+    'c': 0,
+    'd': 0,
+    'e': 0,
+    'f': 0,
+    'g': 0,
+    'h': 0,
+    'i': 0
+  }
+
+  for salary in salaries:
+    if salary >= 200 and salary <= 299:
+      salaryRanges['a'] += 1
+    elif salary >= 300 and salary <= 399:
+      salaryRanges['b'] += 1
+    elif salary >= 400 and salary <= 499:
+      salaryRanges['c'] += 1
+    elif salary >= 500 and salary <= 599:
+      salaryRanges['d'] += 1
+    elif salary >= 600 and salary <= 699:
+      salaryRanges['e'] += 1
+    elif salary >= 700 and salary <= 799:
+      salaryRanges['f'] += 1
+    elif salary >= 800 and salary <= 899:
+      salaryRanges['g'] += 1
+    elif salary >= 900 and salary <= 999:
+      salaryRanges['h'] += 1
+    elif salary >= 1000:
+      salaryRanges['i'] += 1
+
+  for key, value in salaryRanges.items():
+    print(f'{key}: {value}')
