@@ -138,4 +138,80 @@ def exercise06():
 
   print(f'Alunos com mais de 13 anos e altura inferior à média: {studentsWithMoreThan13YearsOldAndHeightLessThanAverage}')
 
-exercise06()
+""" 7º) Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete feita a uma grande
+quantidade de organizações:
+"Qual o seu voto para prefeito da cidade de São Paulo neste ano?"
+As possíveis respostas são:
+1- Ricardo Nunes (MDB)
+2- Guilherme Boulos (PSOL)
+3- Tabata Amaral (PSB)
+4- Kim Kataguiri (UNIÃO)
+5- Maria Helena (NOVO)
+6- Altino Prazeres (PSTU)
+0- Sair
+Você foi contratado para desenvolver um programa que leia o resultado da enquete e informe
+ao final o resultado da mesma. O programa deverá ler os valores até ser informado o valor 0,
+que encerra a entrada dos dados. Não deverão ser aceitos valores além dos válidos para o
+programa (1 a 6). Os valores referentes a cada uma das opções devem ser armazenados numa
+lista. Após os dados terem sido completamente informados, o programa deverá calcular a
+percentual de cada um dos concorrentes e informar o vencedor da enquete. O exemplo do
+formato da saída foi informado pela empresa, que é o seguinte:
+Candidato Votos %
+------------------- ----- ---
+Ricardo Nunes 150 2%
+Guilherme Boulos 3000 34%
+Tabata Amaral 500 5%
+Kim Kataguiri 150 2%
+Maria Helena 3500 40%
+Altino Prazeres 1500 17%
+------------------- -------
+Total 8800 100%
+O candidato mais votado foi Maria Helena, com 3500 votos, correspondendo a 40% dos votos. """
+
+
+def exercise07():
+  def calcPercentage(value, total):
+    return value / total * 100
+  
+  candidates = [0, 0, 0, 0, 0, 0]
+  option = True
+
+  while option != 0:
+    print('1- Ricardo Nunes (MDB)')
+    print('2- Guilherme Boulos (PSOL)')
+    print('3- Tabata Amaral (PSB)')
+    print('4- Kim Kataguiri (UNIÃO)')
+    print('5- Maria Helena (NOVO)')
+    print('6- Altino Prazeres (PSTU)')
+    print('0- Sair')
+
+    option = int(input("Insira uma opcao: "))
+
+    if option != 0:
+      if option == 1:
+        candidates[0] += 1
+      elif option == 2:
+        candidates[1] += 1
+      elif option == 3:
+        candidates[2] += 1
+      elif option == 4:
+        candidates[3] += 1
+      elif option == 5:
+        candidates[4] += 1
+      elif option == 6:
+        candidates[5] += 1
+      else:
+        print('Opção inválida! Tente novamente')
+  
+  print('Candidato Votos %')
+  print('------------------- ----- ---')
+  print(f'Ricardo Nunes {candidates[0]} {calcPercentage(candidates[0], sum(candidates))}%')
+  print(f'Guilherme Boulos {candidates[1]} {calcPercentage(candidates[1], sum(candidates))}%')
+  print(f'Tabata Amaral {candidates[2]} {calcPercentage(candidates[2], sum(candidates))}%')
+  print(f'Kim Kataguiri {candidates[3]} {calcPercentage(candidates[3], sum(candidates))}%')
+  print(f'Maria Helena {candidates[4]} {calcPercentage(candidates[4], sum(candidates))}%')
+  print(f'Altino Prazeres {candidates[5]} {calcPercentage(candidates[5], sum(candidates))}%')
+  print('------------------- -------')
+  print(f'Total {sum(candidates)} 100%')
+
+  print(f'O candidatos mais votado foi {candidates.index(max(candidates)) + 1} com {max(candidates)} votos, correspondendo a {calcPercentage(max(candidates),sum(candidates))}% dos votos.')
