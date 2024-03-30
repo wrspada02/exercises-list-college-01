@@ -202,16 +202,16 @@ def exercise07():
         candidates[5] += 1
       else:
         print('Opção inválida! Tente novamente')
-  
-  print('Candidato Votos %')
-  print('------------------- ----- ---')
-  print(f'Ricardo Nunes {candidates[0]} {calcPercentage(candidates[0], sum(candidates))}%')
-  print(f'Guilherme Boulos {candidates[1]} {calcPercentage(candidates[1], sum(candidates))}%')
-  print(f'Tabata Amaral {candidates[2]} {calcPercentage(candidates[2], sum(candidates))}%')
-  print(f'Kim Kataguiri {candidates[3]} {calcPercentage(candidates[3], sum(candidates))}%')
-  print(f'Maria Helena {candidates[4]} {calcPercentage(candidates[4], sum(candidates))}%')
-  print(f'Altino Prazeres {candidates[5]} {calcPercentage(candidates[5], sum(candidates))}%')
-  print('------------------- -------')
-  print(f'Total {sum(candidates)} 100%')
+  else:
+    print('Candidato Votos %')
+    print('------------------- ----- ---')
+    print(f'Ricardo Nunes {candidates[0]} {calcPercentage(candidates[0], sum(candidates))}%')
+    print(f'Guilherme Boulos {candidates[1]} {calcPercentage(candidates[1], sum(candidates))}%')
+    print(f'Tabata Amaral {candidates[2]} {calcPercentage(candidates[2], sum(candidates))}%')
+    print(f'Kim Kataguiri {candidates[3]} {calcPercentage(candidates[3], sum(candidates))}%')
+    print(f'Maria Helena {candidates[4]} {calcPercentage(candidates[4], sum(candidates))}%')
+    print(f'Altino Prazeres {candidates[5]} {calcPercentage(candidates[5], sum(candidates))}%')
+    print('------------------- -------')
+    print(f'Total {sum(candidates)} 100%')
 
-  print(f'O candidatos mais votado foi {candidates.index(max(candidates)) + 1} com {max(candidates)} votos, correspondendo a {calcPercentage(max(candidates),sum(candidates))}% dos votos.')
+    print(f'O candidatos mais votado foi {candidates.index(max(candidates)) + 1} com {max(candidates)} votos, correspondendo a {calcPercentage(max(candidates),sum(candidates))}% dos votos.')
